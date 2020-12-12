@@ -34,33 +34,3 @@ const Filter = () => {
 };
 
 export default Filter;
-
-/* Filter */
-/* This function responsible for filter type changes */
-const filterTypeChange = () => {
-	if (fillType === "lowpass") {
-		fillType = "highpass";
-	} else if (fillType === "highpass") {
-		fillType = "bandpass";
-	} else if (fillType === "bandpass") {
-		fillType = "lowshelf";
-	} else if (fillType === "lowshelf") {
-		fillType = "highshelf";
-	} else if (fillType === "highshelf") {
-		fillType = "peaking";
-	} else if (fillType === "peaking") {
-		fillType = "notch";
-	} else if (fillType === "notch") {
-		fillType = "allpass";
-	} else if (fillType === "allpass") {
-		fillType = "lowpass";
-	}
-	document.getElementById("filter-name").innerHTML = fillType;
-	filterNode.type = fillType;
-};
-/* This function responsible for filter frequency changes */
-const filterFreqChange = (event) => {
-	//filFreq = event * 200;
-	filterNode.frequency.value = event; //filFreq;
-	console.log(event);
-};
