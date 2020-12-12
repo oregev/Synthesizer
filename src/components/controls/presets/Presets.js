@@ -25,7 +25,7 @@ const Presets = () => {
 					<button className="prevTone" onClick={() => setPreset(getNextPreset(preset.id))} value="up">
 						]
 					</button>
-					<label for="prevTone">next</label>
+					<label htmlFor="prevTone">next</label>
 				</div>
 			</div>
 			<p>
