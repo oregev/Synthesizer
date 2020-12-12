@@ -5,14 +5,12 @@ const Octav = () => {
 	const [ octav, setOctav ] = useState(0)
 
 	const octavChange = (octavKey) => {
-		let tempCount = octav;
 		if ( octav < 3 && octavKey === "up") {
-			tempCount++ ;
+			setOctav(last => last++)
 		} 
 		if ( octav > -3 && octavKey === "dn") {
-			tempCount--;
+			setOctav(last => last--)
 		}
-		setOctav(tempCount)
 	}
 
 	return (
@@ -20,14 +18,14 @@ const Octav = () => {
 			<div className="octav-container control-container centerIt">
 				<div className="centerIt flexColumn">
 					<button className="octaveDn" onClick={() => {octavChange('dn')}}>{`<`}</button>
-					<p>Dn</p>
+					<label htmlfor="octaveDn">Dn</label>
 				</div>
 				<div className="octav-text-container">
 					<p className="octav-text">{octav}</p>
 				</div>
 				<div className="centerIt flexColumn">
 					<button className="octaveUp" onClick={() => {octavChange('up')}}>{`>`}</button>
-					<p>Up</p>
+					<label htmlfor="octaveUp">Up</label>
 				</div>
 			</div>
 			<p>
