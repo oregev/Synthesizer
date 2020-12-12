@@ -1,5 +1,6 @@
 const presets = [
 	{
+		id: 0,
 		name: "Default",
 		ocsType: "sine",
 		octav: 0,
@@ -11,6 +12,7 @@ const presets = [
 		relese: 50,
 	},
 	{
+		id: 1,
 		name: "Peace",
 		ocsType: "square",
 		octav: 2,
@@ -22,6 +24,7 @@ const presets = [
 		relese: 50,
 	},
 	{
+		id: 2,
 		name: "Machine",
 		ocsType: "triangle",
 		octav: -1,
@@ -33,6 +36,7 @@ const presets = [
 		relese: 50,
 	},
 	{
+		id: 3,
 		name: "Fight",
 		ocsType: "sawtooth",
 		octav: 2,
@@ -49,10 +53,25 @@ export const getDefaultPreset = () => {
 	return presets[0];
 };
 
-export const getNextPreset = () => {
-	return "next";
+export const getPreviusPreset = (id) => {
+	if (id === presets.length - 1 || id > 0) {
+		id--;
+	}
+	return presets[id];
 };
 
-export const getPreviusPreset = () => {
-	return "previus";
+export const getNextPreset = (id) => {
+	if (id === 0 || id < presets.length - 1) {
+		id++;
+	}
+	return presets[id];
 };
+
+/* 
+	Should add two more features:
+	1. A "create new preset component"
+	2. The ability to save a new preset
+	to the browser local storage by
+	stringifing the sound banks file.
+
+*/

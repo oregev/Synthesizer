@@ -1,3 +1,4 @@
+import React from "react";
 import Synt from "./components/Synt";
 import "./App.css";
 
