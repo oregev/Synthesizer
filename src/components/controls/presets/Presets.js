@@ -10,7 +10,7 @@ const Presets = () => {
 	}, []);
 
 	return (
-		<div className="presets centerIt flexColumn">
+		<div className="presets centerIt flexColumn" style={{ backgroundColor: "#555" }}>
 			<div className="preset-container control-container centerIt">
 				<div className="centerIt flexColumn">
 					<button className="nextTone" onClick={() => setPreset(getPreviusPreset(preset.id))} value="dn">

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Pan = () => {
 	const [pan, setPan] = useState(0);
 	return (
-		<div className="masters centerIt flexColumn">
+		<div className="masters centerIt flexColumn" style={{ backgroundColor: "#aaa" }}>
 			<div className="master-container">
 				<div className="centerIt">
 					<label htmlFor="pan">

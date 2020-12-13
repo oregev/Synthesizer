@@ -1,0 +1,21 @@
+.syntPage {
+	background-color: rgba(243, 185, 60, 0.219);
+	height: 100vh;
+	padding: 10px;
+}
+
+button {
+	width: 30px;
+	height: 30px;
+	border-radius: 30%;
+	/* border: none; */
+}
+button:focus {
+	outline: none;
+}
+button:hover {
+	background-color: #ddd;
+}
+button:active {
+	background-color: black;
+}

@@ -5,15 +5,15 @@ const Octav = () => {
 
 	const octavChange = (octavKey) => {
 		if (octav < 3 && octavKey === "up") {
-			setOctav((last) => last++);
+			setOctav((last) => last + 1);
 		}
 		if (octav > -3 && octavKey === "dn") {
-			setOctav((last) => last--);
+			setOctav((last) => last - 1);
 		}
 	};
 
 	return (
-		<div className="octav centerIt flexColumn">
+		<div className="octav centerIt flexColumn" style={{ backgroundColor: "#836" }}>
 			<div className="octav-container control-container centerIt">
 				<div className="centerIt flexColumn">
 					<button

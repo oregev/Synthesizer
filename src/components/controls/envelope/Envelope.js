@@ -5,7 +5,7 @@ const Envelope = () => {
 	const [decay, setDecay] = useState(50);
 
 	return (
-		<div className="envelope centerIt flexColumn">
+		<div className="envelope centerIt flexColumn" style={{ backgroundColor: "#3cb" }}>
 			<div className="env-container centerIt">
 				<label htmlFor="attack">A</label>
 				<input

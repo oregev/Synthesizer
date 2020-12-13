@@ -29,7 +29,7 @@ const Oscilator = () => {
 	};
 
 	return (
-		<div className="ocs-type">
+		<div className="ocs-type" style={{ backgroundColor: "#afa" }}>
 			<div className="centerIt flexColumn control-container">
 				<label htmlFor="sin">Sin</label>
 				<button className="sin" name="oscType" onClick={() => oscTypeChange(1)}>

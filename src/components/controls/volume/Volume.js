@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Volume = () => {
 	const [volume, setVolume] = useState(1);
 	return (
-		<div className="masters centerIt flexColumn">
+		<div className="masters centerIt flexColumn" style={{ backgroundColor: "#fff" }}>
 			<div className="master-container">
 				<div className="centerIt">
 					<label htmlFor="vol">
