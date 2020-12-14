@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { getDefaultPreset, getNextPreset, getPreviusPreset } from "./presetBank";
+import "./presets.css";
 
 const Presets = () => {
 	const [preset, setPreset] = useState({});

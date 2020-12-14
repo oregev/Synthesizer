@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./octav.css";
 const Octav = () => {
 	const [octav, setOctav] = useState(0);
 

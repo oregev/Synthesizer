@@ -14,7 +14,7 @@
 .upper-control,
 .lower-control {
 	width: 100%;
-	justify-content: space-around;
+	/* justify-content: space-around; */
 }
 .upper-control {
 	background-color: #621;
@@ -26,7 +26,7 @@
 }
 .lower-control {
 	height: 150px;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
+	/* display: flex;
+	align-items: center; */
+	/* justify-content: space-around; */
 }

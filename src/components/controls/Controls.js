@@ -11,7 +11,7 @@ import "./controls.css";
 const Controls = () => {
 	return (
 		<div className="control-panel">
-			<div className="upper-control">
+			<div className="upper-control centerIt">
 				<div>
 					<Volume />
 					<Pan />
@@ -19,7 +19,7 @@ const Controls = () => {
 				<Presets />
 				<Octav />
 			</div>
-			<div className="lower-control">
+			<div className="lower-control centerIt">
 				<Oscilator />
 				<Envelope />
 				<Filter />

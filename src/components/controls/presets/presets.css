@@ -1,0 +1,19 @@
+.centerIt {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.flexColumn {
+	flex-direction: column;
+}
+.preset-text-container {
+	border-radius: 20px;
+	background-color: ivory;
+	padding: 10px;
+	margin: 0px 5px;
+	box-shadow: inset 1px 1px 5px black;
+	width: 100px;
+}
+.preset-text {
+	text-align: center;
+}
