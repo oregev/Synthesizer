@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./oscilator.css";
 
 const Oscilator = () => {
 	const [oscType, setOscType] = useState("sin");
@@ -29,7 +30,7 @@ const Oscilator = () => {
 	};
 
 	return (
-		<div className="ocs-type" style={{ backgroundColor: "#afa" }}>
+		<div className="ocs-type">
 			<div className="centerIt flexColumn control-container">
 				<label htmlFor="sin">Sin</label>
 				<button className="sin" name="oscType" onClick={() => oscTypeChange(1)}>
@@ -55,7 +56,7 @@ const Oscilator = () => {
 				</button>
 			</div>
 			<p>
-				<b>Osc Type: {oscType}</b>
+				<b>Osc Type</b>
 			</p>
 		</div>
 	);

@@ -13,7 +13,7 @@ const Octav = () => {
 	};
 
 	return (
-		<div className="octav centerIt flexColumn" style={{ backgroundColor: "#836" }}>
+		<div className="octav centerIt flexColumn">
 			<div className="octav-container control-container centerIt">
 				<div className="centerIt flexColumn">
 					<button

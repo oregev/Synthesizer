@@ -4,7 +4,7 @@ import Controls from "../controls/Controls";
 
 const MainScreen = () => {
 	return (
-		<div className="centerIt" style={{ margin: 10 }}>
+		<div className="centerIt" style={{ padding: 10 }}>
 			<Controls />
 		</div>
 	);

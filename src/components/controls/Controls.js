@@ -1,6 +1,6 @@
 import React from "react";
-import Volume from "./volume/Volume";
-import Pan from "./pan/Pan";
+import { Volume } from "./volume/Volume";
+import { Pan } from "./pan/Pan";
 import Presets from "../controls/presets/Presets";
 import Octav from "../controls/octav/Octav";
 import Oscilator from "../controls/oscilator/Oscilator";
@@ -11,7 +11,7 @@ import "./controls.css";
 const Controls = () => {
 	return (
 		<div className="control-panel">
-			<div className="upper-control centerIt">
+			<div className="upper-control">
 				<div>
 					<Volume />
 					<Pan />
@@ -19,7 +19,7 @@ const Controls = () => {
 				<Presets />
 				<Octav />
 			</div>
-			<div className="lower-control centerIt">
+			<div className="lower-control">
 				<Oscilator />
 				<Envelope />
 				<Filter />
