@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./filter.css";
 
 const Filter = () => {
 	const [fillType, setFillType] = useState("lowpass");
@@ -25,10 +26,9 @@ const Filter = () => {
 	};
 
 	return (
-		<div className="filter centerIt flexColumn" style={{ backgroundColor: "#fff" }}>
+		<div className="filter centerIt flexColumn">
 			<div className="filter-change centerIt">
 				<div className="fil-btn-container centerIt">
-					<label htmlFor="change">change</label>
 					<button className="change" onClick={filterTypeChange}>
 						m
 					</button>

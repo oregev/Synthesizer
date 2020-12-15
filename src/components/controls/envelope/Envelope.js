@@ -4,10 +4,19 @@ const Envelope = () => {
 	const [attack, setAttack] = useState(50);
 	const [decay, setDecay] = useState(50);
 
+	const containerStyle = {
+		padding: 10,
+	};
+	const labelStyle = {
+		marginRight: 10,
+	};
+
 	return (
-		<div className="envelope centerIt flexColumn" style={{ backgroundColor: "#3cb" }}>
-			<div className="env-container centerIt">
-				<label htmlFor="attack">A</label>
+		<div className="envelope centerIt flexColumn" style={containerStyle}>
+			<div className="env-container centerIt" style={{ marginBottom: 10 }}>
+				<label htmlFor="attack" style={labelStyle}>
+					A
+				</label>
 				<input
 					className="attack env"
 					onChange={(e) => setAttack(+e.target.value)}
@@ -18,7 +27,9 @@ const Envelope = () => {
 				/>
 			</div>
 			<div className="env-container centerIt">
-				<label htmlFor="decay">D</label>
+				<label htmlFor="decay" style={labelStyle}>
+					D
+				</label>
 				<input
 					className="decay env"
 					onChange={(e) => setDecay(+e.target.value)}
