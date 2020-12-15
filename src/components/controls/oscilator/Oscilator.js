@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./oscilator.css";
 
 const Oscilator = () => {
-	const [oscType, setOscType] = useState("sin");
+	const [oscType, setOscType] = useState("");
+
+	useEffect(() => {
+		setOscType("sine");
+	}, []);
 
 	const oscTypeChange = (num) => {
 		switch (num) {
