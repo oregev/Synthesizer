@@ -2,8 +2,9 @@ const presets = [
 	{
 		id: 0,
 		name: "Default",
-		ocsType: "sine",
+		volume: 50,
 		octav: 0,
+		ocsType: "sine",
 		fillType: "lowpass",
 		fillFreq: 1000,
 		attack: 0,
@@ -14,8 +15,9 @@ const presets = [
 	{
 		id: 1,
 		name: "Peace",
-		ocsType: "square",
+		volume: 50,
 		octav: 2,
+		ocsType: "square",
 		fillType: "highpass",
 		fillFreq: 1500,
 		attack: 10,
@@ -26,8 +28,9 @@ const presets = [
 	{
 		id: 2,
 		name: "Machine",
-		ocsType: "triangle",
+		volume: 50,
 		octav: -1,
+		ocsType: "triangle",
 		fillType: "notch",
 		fillFreq: 1000,
 		attack: 0,
@@ -38,8 +41,9 @@ const presets = [
 	{
 		id: 3,
 		name: "Fight",
-		ocsType: "sawtooth",
+		volume: 50,
 		octav: 2,
+		ocsType: "sawtooth",
 		fillType: "lowpass",
 		fillFreq: 8000,
 		attack: 0,
@@ -49,9 +53,7 @@ const presets = [
 	},
 ];
 
-export const getDefaultPreset = () => {
-	return presets[0];
-};
+export const getDefaultPreset = () => presets[0];
 
 export const getPreviusPreset = (id) => {
 	if (id === presets.length - 1 || id > 0) {

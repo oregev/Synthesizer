@@ -1,1 +1,10 @@
+# dependencies
 node_modules
+
+# misc
+setupTests.js
+reportWebVitals.js
+
+
+# other
+script.js

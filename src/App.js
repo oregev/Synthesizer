@@ -1,13 +1,13 @@
-import React from "react";
-import Synt from "./components/Synt";
+import React, { useState, useEffect } from "react";
+import { Home } from "./views/home/Home";
+import { Synt } from "./views/synt/Synt";
+
 import "./App.css";
 
 function App() {
-	return (
-		<div className="App">
-			<Synt />
-		</div>
-	);
+	const [view, setView] = useState(true);
+
+	return <div>{view ? <Home setView={setView} /> : <Synt />}</div>;
 }
 
 export default App;
