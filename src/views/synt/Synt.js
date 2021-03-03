@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { PresetsProvider } from "../../context/Presets";
-
-import { Engine } from "../../engine/engine";
+import React, { useState, useEffect, useContext } from "react";
+import { PresetsContext } from "../../context/Presets";
 
 import { Volume } from "../../modules/Volume";
 import { Presets } from "../../modules/Presets";
@@ -10,43 +8,39 @@ import { Oscilator } from "../../modules/Oscilator";
 import { Envelope } from "../../modules/Envelope";
 import { Filter } from "../../modules/Filter";
 
-import { Keyboard } from "../../keyboard/Keyboard";
-import { keyToNote } from "../../engine/tools/keyToNote";
-import { InfoScreen } from "../info/InfoScreen";
+import { Piano } from "../../piano/Piano";
+import { KeyboardHandler } from "../../tools/keyboardHandler";
+import { EngineHandler } from "../../engine/engineHandler";
+import { Helper } from "../helper/Helper";
 
 export const Synt = () => {
-	const engine = useRef(new Engine());
-
-	const [popupVis, setPopupVis] = useState(false);
-	const handleKeyDown = (event) => engine.current.play(keyToNote(event.key));
-	const handleKeyUp = () => engine.current.stop();
+	const [presets] = useContext(PresetsContext);
+	const audioContext = new AudioContext();
+	const engineHandler = new EngineHandler(audioContext, presets);
+	const keyboardHandler = new KeyboardHandler(engineHandler);
+	keyboardHandler.init();
 
 	useEffect(() => {
-		document.addEventListener("keydown", (e) => handleKeyDown(e));
-		document.addEventListener("keyup", handleKeyUp);
-		return () => {
-			document.removeEventListener("keydown", (e) => handleKeyDown(e));
-			document.removeEventListener("keyup", handleKeyUp);
-		};
-	});
+		engineHandler.setPresets(presets);
+	}, [presets]);
+
+	const [popupVis, setPopupVis] = useState(false);
 
 	return (
-		<PresetsProvider>
-			<div className="synt--pageContainer">
-				<Volume />
-				<Octav />
-				<Presets />
-				<Oscilator />
-				<Filter />
-				<Envelope />
-				<Keyboard />
-				{popupVis ? <InfoScreen setPopupVis={setPopupVis} /> : <></>}
-				<div className="infoButton--container">
-					<button className="infoButton--button" onClick={() => setPopupVis((lastState) => !lastState)}>
-						i
-					</button>
-				</div>
+		<div className="synt--pageContainer">
+			<Volume />
+			<Octav />
+			<Presets />
+			<Oscilator />
+			<Filter />
+			<Envelope />
+			<Piano ctx={audioContext} />
+			{popupVis ? <Helper setPopupVis={setPopupVis} /> : <></>}
+			<div className="infoButton--container">
+				<button className="infoButton--button" onClick={() => setPopupVis((lastState) => !lastState)}>
+					i
+				</button>
 			</div>
-		</PresetsProvider>
+		</div>
 	);
 };

@@ -1,16 +1,20 @@
 const presets = [
 	{
 		id: 0,
-		name: "Default",
+		name: "default",
 		volume: 50,
 		octav: 0,
 		ocsType: "sine",
-		fillType: "lowpass",
-		fillFreq: 1000,
-		attack: 0,
-		decay: 100,
-		sustain: 20,
-		relese: 50,
+		filter: {
+			fillType: "lowpass",
+			fillFreq: 1000,
+		},
+		envelope: {
+			attack: 0,
+			decay: 100,
+			sustain: 20,
+			relese: 50,
+		},
 	},
 	{
 		id: 1,
@@ -18,25 +22,34 @@ const presets = [
 		volume: 50,
 		octav: 2,
 		ocsType: "square",
-		fillType: "highpass",
-		fillFreq: 1500,
-		attack: 10,
-		decay: 0,
-		sustain: 50,
-		relese: 50,
+		filter: {
+			fillType: "highpass",
+			fillFreq: 1500,
+		},
+		envelope: {
+			attack: 10,
+			decay: 0,
+			sustain: 50,
+			relese: 50,
+		},
 	},
 	{
 		id: 2,
 		name: "Machine",
 		volume: 50,
 		octav: -1,
+
 		ocsType: "triangle",
-		fillType: "notch",
-		fillFreq: 1000,
-		attack: 0,
-		decay: 100,
-		sustain: 50,
-		relese: 50,
+		filter: {
+			fillType: "notch",
+			fillFreq: 1000,
+		},
+		envelope: {
+			attack: 0,
+			decay: 100,
+			sustain: 50,
+			relese: 50,
+		},
 	},
 	{
 		id: 3,
@@ -44,12 +57,16 @@ const presets = [
 		volume: 50,
 		octav: 2,
 		ocsType: "sawtooth",
-		fillType: "lowpass",
-		fillFreq: 8000,
-		attack: 0,
-		decay: 100,
-		sustain: 50,
-		relese: 50,
+		filter: {
+			fillType: "lowpass",
+			fillFreq: 8000,
+		},
+		envelope: {
+			attack: 0,
+			decay: 100,
+			sustain: 50,
+			relese: 50,
+		},
 	},
 ];
 

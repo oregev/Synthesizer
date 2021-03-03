@@ -1,6 +1,6 @@
 import React from "react";
 
-export const InfoScreen = () => {
+export const Helper = () => {
 	return (
 		<div>
 			<div className="helper-scr centerIt flexColumn">

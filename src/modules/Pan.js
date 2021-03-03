@@ -6,7 +6,7 @@ export const Pan = () => {
 	return (
 		<div className="panContainer controls">
 			<label htmlFor="pan">
-				<b>Pan</b>
+				<b>PAN</b>
 			</label>
 			<input
 				name="pan"

@@ -1,29 +1,21 @@
 export class Filter {
-	constructor(ctx, nextNode) {
+	constructor(ctx, nextNode, filterPresets) {
 		this.filterNode = ctx.createBiquadFilter();
 		this.nextNode = nextNode;
-		this.type = "lowpass";
-		this.frequency = 5000;
+		this.type = filterPresets.fillType;
+		this.frequency = filterPresets.fillFreq;
 	}
 
 	create = () => {
 		this.filterNode.type = this.type;
 		this.filterNode.frequency.value = this.frequency;
 	};
-
-	connect = () => {
-		this.filterNode.connect(this.nextNode);
-	};
-
+	connect = () => this.filterNode.connect(this.nextNode);
 	init = () => {
 		this.create();
 		this.connect();
 	};
-
-	setFrequency = (frequency) => {
-		this.frequency = frequency;
-	};
-
+	setFrequency = (frequency) => (this.frequency = frequency);
 	nextType = () => {
 		if (this.type === "lowpass") {
 			this.type = "highpass";

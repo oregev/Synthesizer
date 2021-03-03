@@ -33,38 +33,22 @@ export class Osc {
 		}
 	};
 
-	setFreq = (note) => {
-		this.oscFreq = noteToFreq(note);
-	};
-
+	setFreq = (note) => (this.oscFreq = noteToFreq(note));
 	create = () => {
 		this.oscNode = this.ctx.createOscillator();
 		this.oscNode.type = this.type;
 		this.oscNode.frequency.value = this.oscFreq;
 	};
-
-	connect = () => {
-		this.oscNode.connect(this.nextNode);
-	};
-
-	disconnect = () => {
-		this.oscNode.disconnect(this.nextNode);
-	};
-
-	remove = () => {
-		this.oscNode = null;
-	};
-
+	connect = () => this.oscNode.connect(this.nextNode);
+	disconnect = () => this.oscNode.disconnect(this.nextNode);
+	remove = () => (this.oscNode = null);
 	start = (note) => {
 		this.setFreq(note);
-		console.log("start", note);
 		this.create();
 		this.connect();
 		this.oscNode.start(0);
 	};
-
 	stop = () => {
-		console.log("stop");
 		this.oscNode.stop(0);
 		this.disconnect();
 		this.remove();
